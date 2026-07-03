@@ -35,23 +35,111 @@ const successMessage = document.getElementById("successMessage");
 const startButton = document.getElementById("startButton");
 
 questions.forEach((question, index) => {
+
   const step = document.createElement("section");
   step.className = "step";
   step.dataset.step = String(index + 1);
-  step.innerHTML = `
-    <p class="step-kicker">Gesundheitsfrage ${index + 1} von ${questions.length}</p>
-    <h2>${question[1]}</h2>
-    <div class="choice-grid two">
-      <label class="option-card">
-        <input type="radio" name="${question[0]}" value="Ja" required>
-        <span>Ja</span>
-      </label>
-      <label class="option-card">
-        <input type="radio" name="${question[0]}" value="Nein">
-        <span>Nein</span>
-      </label>
-    </div>
-  `;
+
+  if(index === 13){
+
+    step.innerHTML = `
+      <p class="step-kicker">Gesundheitsfrage ${index + 1} von ${questions.length}</p>
+      <h2>${question[1]}</h2>
+
+      <div class="choice-grid">
+        <label class="option-card">
+          <input type="radio" name="${question[0]}" value="Ja" required>
+          <span>Ja</span>
+        </label>
+
+        <label class="option-card">
+          <input type="radio" name="${question[0]}" value="Nein">
+          <span>Nein</span>
+        </label>
+
+        <label class="option-card">
+          <input type="radio" name="${question[0]}" value="Ich bin männlich">
+          <span>Ich bin männlich</span>
+        </label>
+      </div>
+    `;
+
+  } else if(index === 14){
+
+    step.innerHTML = `
+      <p class="step-kicker">Gesundheitsfrage ${index + 1} von ${questions.length}</p>
+      <h2>${question[1]}</h2>
+
+      <div class="choice-grid">
+        <label class="option-card">
+          <input type="radio" name="${question[0]}" value="Ja" required>
+          <span>Ja</span>
+        </label>
+
+        <label class="option-card">
+          <input type="radio" name="${question[0]}" value="Nein">
+          <span>Nein</span>
+        </label>
+
+        <label class="option-card">
+          <input type="radio" name="${question[0]}" value="Ich bin weiblich">
+          <span>Ich bin weiblich</span>
+        </label>
+      </div>
+    `;
+
+  } else if(index === 17){
+
+    step.innerHTML = `
+      <p class="step-kicker">Gesundheitsfrage ${index + 1} von ${questions.length}</p>
+      <h2>${question[1]}</h2>
+
+      <div class="choice-grid two">
+
+        <label class="option-card">
+          <input type="radio" name="${question[0]}" value="Ja" required>
+          <span>Ja</span>
+        </label>
+
+        <label class="option-card">
+          <input type="radio" name="${question[0]}" value="Nein">
+          <span>Nein</span>
+        </label>
+
+      </div>
+
+      <div id="foodIntoleranceBox" style="display:none;margin-top:18px;">
+        <label>
+          Welche Unverträglichkeiten liegen vor?
+
+          <input
+            type="text"
+            name="Lebensmittel Unvertraeglichkeiten"
+            placeholder="z. B. Gluten, Laktose, Fruktose">
+        </label>
+      </div>
+    `;
+
+  } else {
+
+    step.innerHTML = `
+      <p class="step-kicker">Gesundheitsfrage ${index + 1} von ${questions.length}</p>
+      <h2>${question[1]}</h2>
+
+      <div class="choice-grid two">
+        <label class="option-card">
+          <input type="radio" name="${question[0]}" value="Ja" required>
+          <span>Ja</span>
+        </label>
+
+        <label class="option-card">
+          <input type="radio" name="${question[0]}" value="Nein">
+          <span>Nein</span>
+        </label>
+      </div>
+    `;
+  }
+
   const priorityStep = document.querySelector(".priority-step");
   stepsContainer.insertBefore(step, priorityStep);
 });
@@ -145,6 +233,19 @@ form.addEventListener("keydown", (event) => {
 
 form.addEventListener("change", (event) => {
   const field = event.target;
+  if (
+  field.name === "Gibt es Lebensmittel die Sie nicht vertragen"
+) {
+    const field = event.target;
+  const box = document.getElementById("foodIntoleranceBox");
+
+  if (box) {
+    box.style.display =
+      field.value === "Ja"
+        ? "block"
+        : "none";
+  }
+}
 
   if (field.closest(".priority-step")) {
     const selected = [...document.querySelectorAll(".priority-step input[type='checkbox']:checked")];
@@ -155,7 +256,7 @@ form.addEventListener("change", (event) => {
     return;
   }
 
-  if (field.type === "radio" && field.closest(".step") && currentStep > 0 && currentStep < 22) {
+  if (field.type === "radio" && field.closest(".step") && currentStep > 0 && currentStep < 26) {
     setTimeout(nextStep, 180);
   }
 });

@@ -286,3 +286,7 @@ input[type=radio],input[type=checkbox]{
 .gtranslate_wrapper{
   z-index:99999;
 }
+label.full{
+    margin-bottom:32px;
+    display:block;
+}

@@ -257,19 +257,6 @@ if (field.name === currentQuestionName) {
     return;
   }
 }
-  if (
-  field.name === "Gibt es Lebensmittel die Sie nicht vertragen"
-) {
-    const field = event.target;
-  const box = document.getElementById("foodIntoleranceBox");
-
-  if (box) {
-    box.style.display =
-      field.value === "Ja"
-        ? "block"
-        : "none";
-  }
-}
 
   if (field.closest(".priority-step")) {
     const selected = [...document.querySelectorAll(".priority-step input[type='checkbox']:checked")];
@@ -280,9 +267,15 @@ if (field.name === currentQuestionName) {
     return;
   }
 
-  if (field.type === "radio" && field.closest(".step") && currentStep > 0 && currentStep < 26) {
-    setTimeout(nextStep, 180);
-  }
+ if (
+  field.type === "radio" &&
+  field.name !== "Gibt es Lebensmittel die Sie nicht vertragen" &&
+  field.closest(".step") &&
+  currentStep > 0 &&
+  currentStep < 26
+) {
+  setTimeout(nextStep, 180);
+}
 });
 
 form.addEventListener("submit", async (event) => {

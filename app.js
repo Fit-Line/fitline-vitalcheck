@@ -233,6 +233,30 @@ form.addEventListener("keydown", (event) => {
 
 form.addEventListener("change", (event) => {
   const field = event.target;
+  const currentQuestionName =
+  "Gibt es Lebensmittel die Sie nicht vertragen";
+
+if (field.name === currentQuestionName) {
+
+  const box =
+    document.getElementById("foodIntoleranceBox");
+
+  if (box) {
+
+    if (field.value === "Ja") {
+
+      box.style.display = "block";
+
+      return;
+    }
+
+    box.style.display = "none";
+
+    setTimeout(nextStep,180);
+
+    return;
+  }
+}
   if (
   field.name === "Gibt es Lebensmittel die Sie nicht vertragen"
 ) {

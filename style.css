@@ -283,3 +283,6 @@ input[type=radio],input[type=checkbox]{
     border-color:#D01541;
     box-shadow:0 0 0 4px rgba(208,21,65,.1);
 }
+.gtranslate_wrapper{
+  z-index:99999;
+}

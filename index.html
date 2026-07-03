@@ -52,8 +52,21 @@
           <div id="steps" class="steps">
 
             <section class="step active" data-step="0">
-              <p class="step-kicker">Persönliche Angaben</p>
-              <h2>Starten wir mit Ihren Kontaktdaten.</h2>
+              <p class="step-kicker">Bonusvoucher</p>
+
+<label class="full">
+  Vouchernummer (optional)
+  <input
+    type="text"
+    name="Vouchernummer"
+    maxlength="6"
+    pattern="[0-9]{1,6}"
+    inputmode="numeric"
+    placeholder="z. B. 123456">
+</label>
+
+<p class="step-kicker">Persönliche Angaben</p>
+<h2>Starten wir mit Ihren Kontaktdaten.</h2>
               <div class="grid">
                 <label>Vorname *<input type="text" name="Vorname" required></label>
                 <label>Nachname *<input type="text" name="Nachname" required></label>

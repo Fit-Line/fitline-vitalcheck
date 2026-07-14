@@ -314,3 +314,25 @@ input[type=radio],input[type=checkbox]{
 .gtranslate_wrapper{
   z-index:99999;
 }
+/* ---------- GTranslate Smartphone ---------- */
+
+.gtranslate_wrapper{
+    z-index:99999;
+}
+
+@media (max-width:768px){
+
+    .gtranslate_wrapper{
+        position:fixed !important;
+
+        top:18px !important;
+        right:18px !important;
+
+        left:auto !important;
+        bottom:auto !important;
+
+        transform:scale(.88);
+        transform-origin:top right;
+    }
+
+}

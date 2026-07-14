@@ -1,29 +1,100 @@
 const questions = [
-  ["Fuehlen Sie sich haeufig muede und erschoepft", "Fühlen Sie sich häufig müde und erschöpft?"],
-  ["Faellt es Ihnen schwer sich ueber laengere Zeit zu konzentrieren", "Fällt es Ihnen schwer, sich über längere Zeit zu konzentrieren?"],
-  ["Fuehlen Sie sich haeufig gestresst", "Fühlen Sie sich häufig gestresst?"],
-  ["Sind Sie anfaellig fuer Erkaeltungen oder Infektionen", "Sind Sie anfällig für Erkältungen oder Infektionen?"],
-  ["Haben Sie Probleme mit Ihrer Verdauung oder Darmfunktion", "Haben Sie Probleme mit Ihrer Verdauung oder Darmfunktion?"],
-  ["Haben Sie Probleme durchzuschlafen", "Haben Sie Probleme durchzuschlafen?"],
-  ["Wachen Sie morgens haeufig auf ohne richtig erholt zu sein", "Wachen Sie morgens häufig auf, ohne richtig erholt zu sein?"],
-  ["Haben Sie haeufig Wadenkraempfe oder steife Gelenke", "Haben Sie häufig Wadenkrämpfe oder steife Gelenke?"],
-  ["Sind Sie mit Ihrer Haut Ihren Haaren oder Ihren Naegeln unzufrieden", "Sind Sie mit Ihrer Haut, Ihren Haaren oder Ihren Nägeln unzufrieden?"],
-  ["Haben Sie regelmaessig Beschwerden an Ihren Gelenken", "Haben Sie regelmäßig Beschwerden an Ihren Gelenken?"],
-  ["Treiben Sie regelmaessig Sport", "Treiben Sie regelmäßig Sport?"],
-  ["Essen Sie zwei bis dreimal pro Woche frischen Lachs Makrele oder Thunfisch", "Essen Sie zwei- bis dreimal pro Woche frischen Lachs, Makrele oder Thunfisch?"],
-  ["Sind Sie ueber 40 Jahre alt", "Sind Sie über 40 Jahre alt?"],
-  ["Leiden Sie als Frau unter typischen peri oder menopausalen Beschwerden", "Leiden Sie als Frau unter typischen peri- oder menopausalen Beschwerden?"],
-  ["Moechten Sie als Mann Ihren Testosteronspiegel verbessern", "Möchten Sie als Mann Ihren Testosteronspiegel verbessern?"],
-  ["Sind Sie mit Ihrem Koerpergewicht zufrieden", "Sind Sie mit Ihrem Körpergewicht zufrieden?"],
-  ["Moechten Sie Ihr Gewicht verbessern", "Möchten Sie Ihr Gewicht verbessern?"],
-  ["Gibt es Lebensmittel die Sie nicht vertragen", "Gibt es Lebensmittel, die Sie nicht vertragen?"],
-  ["Haben Sie ein Kind mit Konzentrations oder Aufmerksamkeitsstoerungen", "Haben Sie ein Kind mit Konzentrations- oder Aufmerksamkeitsstörungen?"],
-  ["Essen Sie taeglich weniger als fuenf Portionen Obst und Gemuese", "Essen Sie täglich weniger als fünf Portionen Obst und Gemüse?"],
-  ["Essen Sie haeufig Fertiggerichte oder Fast Food", "Essen Sie häufig Fertiggerichte oder Fast Food?"]
+  {
+    name: "Fuehlen Sie sich haeufig muede und erschoepft",
+    text: "Fühlen Sie sich häufig müde und erschöpft?"
+  },
+  {
+    name: "Faellt es Ihnen schwer sich ueber laengere Zeit zu konzentrieren",
+    text: "Fällt es Ihnen schwer, sich über längere Zeit zu konzentrieren?"
+  },
+  {
+    name: "Fuehlen Sie sich haeufig gestresst",
+    text: "Fühlen Sie sich häufig gestresst?"
+  },
+  {
+    name: "Sind Sie anfaellig fuer Erkaeltungen oder Infektionen",
+    text: "Sind Sie anfällig für Erkältungen oder Infektionen?"
+  },
+  {
+    name: "Haben Sie Probleme mit Ihrer Verdauung oder Darmfunktion",
+    text: "Haben Sie Probleme mit Ihrer Verdauung oder Darmfunktion?"
+  },
+  {
+    name: "Haben Sie Probleme durchzuschlafen",
+    text: "Haben Sie Probleme durchzuschlafen?"
+  },
+  {
+    name: "Wachen Sie morgens haeufig auf ohne richtig erholt zu sein",
+    text: "Wachen Sie morgens häufig auf, ohne richtig erholt zu sein?"
+  },
+  {
+    name: "Haben Sie haeufig Wadenkraempfe oder Morgensteifigkeit",
+    text: "Haben Sie häufig Wadenkrämpfe oder Morgensteifigkeit?"
+  },
+  {
+    name: "Sind Sie mit Ihrer Haut Ihren Haaren oder Ihren Naegeln unzufrieden",
+    text: "Sind Sie mit Ihrer Haut, Ihren Haaren oder Ihren Nägeln unzufrieden?"
+  },
+  {
+    name: "Leiden Sie unter Arthrose oder Arthritis",
+    text: "Leiden Sie unter Arthrose oder Arthritis?"
+  },
+  {
+    name: "Treiben Sie regelmaessig Sport",
+    text: "Treiben Sie regelmäßig Sport?"
+  },
+  {
+    name: "Essen Sie zwei bis dreimal pro Woche frischen Lachs Makrele oder Thunfisch",
+    text: "Essen Sie zwei- bis dreimal pro Woche frischen Lachs, Makrele oder Thunfisch?"
+  },
+  {
+    name: "Leiden Sie als Frau unter typischen peri oder menopausalen Beschwerden",
+    text: "Leiden Sie als Frau unter typischen peri- oder menopausalen Beschwerden?",
+    options: [
+      { value: "Ja", label: "Ja" },
+      { value: "Nein", label: "Nein" },
+      { value: "Ich bin maennlich", label: "Ich bin männlich" }
+    ]
+  },
+  {
+    name: "Moechten Sie als Mann Ihren Testosteronspiegel verbessern",
+    text: "Möchten Sie als Mann Ihren Testosteronspiegel verbessern?",
+    options: [
+      { value: "Ja", label: "Ja" },
+      { value: "Nein", label: "Nein" },
+      { value: "Ich bin weiblich", label: "Ich bin weiblich" }
+    ]
+  },
+  {
+    name: "Moechten Sie Ihr Gewicht optimieren",
+    text: "Möchten Sie Ihr Gewicht optimieren?",
+    type: "weight"
+  },
+  {
+    name: "Gibt es Lebensmittel die Sie nicht vertragen",
+    text: "Gibt es Lebensmittel, die Sie nicht vertragen?",
+    type: "intolerance"
+  },
+  {
+    name: "Treiben Ihre Kinder Sport",
+    text: "Treiben Ihre Kinder Sport?"
+  },
+  {
+    name: "Haben Sie ein Kind mit Konzentrations oder Aufmerksamkeitsstoerungen",
+    text: "Haben Sie ein Kind mit Konzentrations- oder Aufmerksamkeitsstörungen?"
+  },
+  {
+    name: "Essen Sie taeglich weniger als fuenf Portionen Obst und Gemuese",
+    text: "Essen Sie täglich weniger als fünf Portionen Obst und Gemüse?"
+  },
+  {
+    name: "Essen Sie haeufig Fertiggerichte oder Fast Food",
+    text: "Essen Sie häufig Fertiggerichte oder Fast Food?"
+  }
 ];
 
 const form = document.getElementById("contactForm");
-const stepsContainer = document.getElementById("steps");
+const questionSteps = document.getElementById("questionSteps");
 const formError = document.getElementById("formError");
 const prevBtn = document.getElementById("prevBtn");
 const nextBtn = document.getElementById("nextBtn");
@@ -34,118 +105,151 @@ const progressFill = document.getElementById("progressFill");
 const successMessage = document.getElementById("successMessage");
 const startButton = document.getElementById("startButton");
 
-questions.forEach((question, index) => {
+const DEFAULT_OPTIONS = [
+  { value: "Ja", label: "Ja" },
+  { value: "Nein", label: "Nein" }
+];
 
-  const step = document.createElement("section");
-  step.className = "step";
-  step.dataset.step = String(index + 1);
+function createOptionCard(questionName, option, required = false) {
+  return `
+    <label class="option-card">
+      <input
+        type="radio"
+        name="${questionName}"
+        value="${option.value}"
+        ${required ? "required" : ""}
+      >
+      <span>${option.label}</span>
+    </label>
+  `;
+}
 
-  if(index === 13){
+function createStandardQuestion(question, index) {
+  const options = question.options || DEFAULT_OPTIONS;
 
-    step.innerHTML = `
-      <p class="step-kicker">Gesundheitsfrage ${index + 1} von ${questions.length}</p>
-      <h2>${question[1]}</h2>
+  return `
+    <section
+      class="step health-question"
+      data-question-type="standard"
+      data-auto-advance="true"
+    >
+      <p class="step-kicker">
+        Gesundheitsfrage ${index + 1} von ${questions.length}
+      </p>
 
-      <div class="choice-grid">
-        <label class="option-card">
-          <input type="radio" name="${question[0]}" value="Ja" required>
-          <span>Ja</span>
-        </label>
+      <h2>${question.text}</h2>
 
-        <label class="option-card">
-          <input type="radio" name="${question[0]}" value="Nein">
-          <span>Nein</span>
-        </label>
-
-        <label class="option-card">
-          <input type="radio" name="${question[0]}" value="Ich bin männlich">
-          <span>Ich bin männlich</span>
-        </label>
+      <div class="choice-grid ${options.length === 2 ? "two" : ""}">
+        ${options
+          .map((option, optionIndex) =>
+            createOptionCard(question.name, option, optionIndex === 0)
+          )
+          .join("")}
       </div>
-    `;
+    </section>
+  `;
+}
 
-  } else if(index === 14){
+function createWeightQuestion(question, index) {
+  return `
+    <section
+      class="step health-question"
+      data-question-type="weight"
+      data-auto-advance="conditional"
+    >
+      <p class="step-kicker">
+        Gesundheitsfrage ${index + 1} von ${questions.length}
+      </p>
 
-    step.innerHTML = `
-      <p class="step-kicker">Gesundheitsfrage ${index + 1} von ${questions.length}</p>
-      <h2>${question[1]}</h2>
-
-      <div class="choice-grid">
-        <label class="option-card">
-          <input type="radio" name="${question[0]}" value="Ja" required>
-          <span>Ja</span>
-        </label>
-
-        <label class="option-card">
-          <input type="radio" name="${question[0]}" value="Nein">
-          <span>Nein</span>
-        </label>
-
-        <label class="option-card">
-          <input type="radio" name="${question[0]}" value="Ich bin weiblich">
-          <span>Ich bin weiblich</span>
-        </label>
-      </div>
-    `;
-
-  } else if(index === 17){
-
-    step.innerHTML = `
-      <p class="step-kicker">Gesundheitsfrage ${index + 1} von ${questions.length}</p>
-      <h2>${question[1]}</h2>
+      <h2>${question.text}</h2>
 
       <div class="choice-grid two">
-
-        <label class="option-card">
-          <input type="radio" name="${question[0]}" value="Ja" required>
-          <span>Ja</span>
-        </label>
-
-        <label class="option-card">
-          <input type="radio" name="${question[0]}" value="Nein">
-          <span>Nein</span>
-        </label>
-
+        ${createOptionCard(question.name, { value: "Ja", label: "Ja" }, true)}
+        ${createOptionCard(question.name, { value: "Nein", label: "Nein" })}
       </div>
 
-      <div id="foodIntoleranceBox" style="display:none;margin-top:18px;">
+      <div class="conditional-box" data-weight-box hidden>
+        <p class="conditional-title">Was möchten Sie erreichen?</p>
+
+        <div class="choice-grid two">
+          <label class="option-card">
+            <input
+              type="radio"
+              name="Gewichtsziel"
+              value="Abnehmen"
+              data-conditional-required
+            >
+            <span>Abnehmen</span>
+          </label>
+
+          <label class="option-card">
+            <input
+              type="radio"
+              name="Gewichtsziel"
+              value="Zunehmen"
+            >
+            <span>Zunehmen</span>
+          </label>
+        </div>
+      </div>
+    </section>
+  `;
+}
+
+function createIntoleranceQuestion(question, index) {
+  return `
+    <section
+      class="step health-question"
+      data-question-type="intolerance"
+      data-auto-advance="conditional"
+    >
+      <p class="step-kicker">
+        Gesundheitsfrage ${index + 1} von ${questions.length}
+      </p>
+
+      <h2>${question.text}</h2>
+
+      <div class="choice-grid two">
+        ${createOptionCard(question.name, { value: "Ja", label: "Ja" }, true)}
+        ${createOptionCard(question.name, { value: "Nein", label: "Nein" })}
+      </div>
+
+      <div class="conditional-box" data-intolerance-box hidden>
         <label>
           Welche Unverträglichkeiten liegen vor?
-
           <input
             type="text"
             name="Lebensmittel Unvertraeglichkeiten"
-            placeholder="z. B. Gluten, Laktose, Fruktose">
+            placeholder="z. B. Gluten, Laktose, Fruktose"
+            data-conditional-required
+          >
         </label>
       </div>
-    `;
+    </section>
+  `;
+}
 
-  } else {
+function renderQuestions() {
+  questionSteps.innerHTML = questions
+    .map((question, index) => {
+      if (question.type === "weight") {
+        return createWeightQuestion(question, index);
+      }
 
-    step.innerHTML = `
-      <p class="step-kicker">Gesundheitsfrage ${index + 1} von ${questions.length}</p>
-      <h2>${question[1]}</h2>
+      if (question.type === "intolerance") {
+        return createIntoleranceQuestion(question, index);
+      }
 
-      <div class="choice-grid two">
-        <label class="option-card">
-          <input type="radio" name="${question[0]}" value="Ja" required>
-          <span>Ja</span>
-        </label>
+      return createStandardQuestion(question, index);
+    })
+    .join("");
+}
 
-        <label class="option-card">
-          <input type="radio" name="${question[0]}" value="Nein">
-          <span>Nein</span>
-        </label>
-      </div>
-    `;
-  }
+renderQuestions();
 
-  const priorityStep = document.querySelector(".priority-step");
-  stepsContainer.insertBefore(step, priorityStep);
-});
-
-const steps = [...document.querySelectorAll(".step")].sort((a,b) => Number(a.dataset.step) - Number(b.dataset.step));
+const steps = [...document.querySelectorAll(".step")];
 let currentStep = 0;
+let autoAdvanceTimer = null;
 
 function showError(message) {
   formError.textContent = message;
@@ -155,30 +259,84 @@ function clearError() {
   formError.textContent = "";
 }
 
+function clearAutoAdvanceTimer() {
+  if (autoAdvanceTimer) {
+    window.clearTimeout(autoAdvanceTimer);
+    autoAdvanceTimer = null;
+  }
+}
+
+function scheduleNextStep(delay = 180) {
+  clearAutoAdvanceTimer();
+
+  autoAdvanceTimer = window.setTimeout(() => {
+    autoAdvanceTimer = null;
+    nextStep();
+  }, delay);
+}
+
 function getFields(step) {
-  return [...step.querySelectorAll("input, select, textarea")].filter(field => field.name !== "botcheck");
+  return [...step.querySelectorAll("input, select, textarea")].filter(
+    field => field.name !== "botcheck" && !field.disabled
+  );
+}
+
+function updateConditionalRequirement(container, active) {
+  if (!container) return;
+
+  const conditionalField = container.querySelector("[data-conditional-required]");
+
+  if (conditionalField) {
+    conditionalField.required = active;
+  }
+}
+
+function resetConditionalFields(container) {
+  if (!container) return;
+
+  container.querySelectorAll("input").forEach(input => {
+    if (input.type === "radio" || input.type === "checkbox") {
+      input.checked = false;
+    } else {
+      input.value = "";
+    }
+
+    input.required = false;
+  });
 }
 
 function validateCurrentStep() {
   const step = steps[currentStep];
-  const fields = getFields(step);
+
+  if (!step) {
+    return false;
+  }
 
   if (step.classList.contains("priority-step")) {
-    const selected = [...step.querySelectorAll('input[type="checkbox"]:checked')].length;
+    const selected = step.querySelectorAll(
+      'input[type="checkbox"]:checked'
+    ).length;
+
     if (selected === 0) {
       showError("Bitte wählen Sie mindestens eine Antwort aus.");
       return false;
     }
+
     if (selected > 3) {
       showError("Bitte wählen Sie maximal drei Antworten aus.");
       return false;
     }
+
     return true;
   }
 
+  const fields = getFields(step);
+
   for (const field of fields) {
     if (!field.checkValidity()) {
-      showError("Bitte beantworten Sie diese Frage bzw. füllen Sie alle Pflichtfelder korrekt aus.");
+      showError(
+        "Bitte beantworten Sie diese Frage bzw. füllen Sie alle Pflichtfelder korrekt aus."
+      );
       field.reportValidity();
       return false;
     }
@@ -188,26 +346,41 @@ function validateCurrentStep() {
 }
 
 function updateWizard() {
-  steps.forEach((step, index) => step.classList.toggle("active", index === currentStep));
+  clearAutoAdvanceTimer();
+
+  steps.forEach((step, index) => {
+    step.classList.toggle("active", index === currentStep);
+  });
 
   const total = steps.length;
-  const percent = Math.round((currentStep / (total - 1)) * 100);
+  const percent =
+    total > 1 ? Math.round((currentStep / (total - 1)) * 100) : 100;
 
   stepText.textContent = `Schritt ${currentStep + 1} von ${total}`;
   progressText.textContent = `${percent}%`;
   progressFill.style.width = `${percent}%`;
 
   prevBtn.style.visibility = currentStep === 0 ? "hidden" : "visible";
-  nextBtn.style.display = currentStep === total - 1 ? "none" : "inline-flex";
-  submitBtn.style.display = currentStep === total - 1 ? "inline-flex" : "none";
+  nextBtn.style.display =
+    currentStep === total - 1 ? "none" : "inline-flex";
+  submitBtn.style.display =
+    currentStep === total - 1 ? "inline-flex" : "none";
 
   clearError();
+
   const cardTop = form.getBoundingClientRect().top + window.scrollY - 12;
-  window.scrollTo({ top: cardTop, behavior: "smooth" });
+
+  window.scrollTo({
+    top: cardTop,
+    behavior: "smooth"
+  });
 }
 
 function nextStep() {
-  if (!validateCurrentStep()) return;
+  if (!validateCurrentStep()) {
+    return;
+  }
+
   if (currentStep < steps.length - 1) {
     currentStep += 1;
     updateWizard();
@@ -221,68 +394,155 @@ function prevStep() {
   }
 }
 
+function handlePrioritySelection(field) {
+  const step = field.closest(".priority-step");
+
+  if (!step) {
+    return false;
+  }
+
+  const selected = [
+    ...step.querySelectorAll('input[type="checkbox"]:checked')
+  ];
+
+  if (selected.length > 3) {
+    field.checked = false;
+    showError("Bitte wählen Sie maximal drei Antworten aus.");
+  } else {
+    clearError();
+  }
+
+  return true;
+}
+
+function handleWeightQuestion(field, step) {
+  const weightBox = step.querySelector("[data-weight-box]");
+
+  if (field.name === "Moechten Sie Ihr Gewicht optimieren") {
+    const isYes = field.value === "Ja";
+
+    weightBox.hidden = !isYes;
+    updateConditionalRequirement(weightBox, isYes);
+
+    if (isYes) {
+      clearError();
+      return true;
+    }
+
+    resetConditionalFields(weightBox);
+    scheduleNextStep();
+    return true;
+  }
+
+  if (field.name === "Gewichtsziel") {
+    scheduleNextStep();
+    return true;
+  }
+
+  return false;
+}
+
+function handleIntoleranceQuestion(field, step) {
+  if (field.name !== "Gibt es Lebensmittel die Sie nicht vertragen") {
+    return false;
+  }
+
+  const intoleranceBox = step.querySelector("[data-intolerance-box]");
+  const isYes = field.value === "Ja";
+
+  intoleranceBox.hidden = !isYes;
+  updateConditionalRequirement(intoleranceBox, isYes);
+
+  if (isYes) {
+    clearError();
+
+    const textField = intoleranceBox.querySelector('input[type="text"]');
+
+    window.setTimeout(() => {
+      textField?.focus();
+    }, 50);
+
+    return true;
+  }
+
+  resetConditionalFields(intoleranceBox);
+  scheduleNextStep();
+  return true;
+}
+
 nextBtn.addEventListener("click", nextStep);
 prevBtn.addEventListener("click", prevStep);
 
-form.addEventListener("keydown", (event) => {
-  if (event.key === "Enter" && event.target.tagName !== "TEXTAREA") {
-    event.preventDefault();
-    if (currentStep < steps.length - 1) nextStep();
+form.addEventListener("keydown", event => {
+  if (event.key !== "Enter" || event.target.tagName === "TEXTAREA") {
+    return;
+  }
+
+  if (
+    event.target.name === "Lebensmittel Unvertraeglichkeiten" ||
+    event.target.type === "text" ||
+    event.target.type === "email" ||
+    event.target.type === "tel" ||
+    event.target.type === "number"
+  ) {
+    return;
+  }
+
+  event.preventDefault();
+
+  if (currentStep < steps.length - 1) {
+    nextStep();
   }
 });
 
-form.addEventListener("change", (event) => {
+form.addEventListener("input", event => {
   const field = event.target;
-  const currentQuestionName =
-  "Gibt es Lebensmittel die Sie nicht vertragen";
 
-if (field.name === currentQuestionName) {
-
-  const box =
-    document.getElementById("foodIntoleranceBox");
-
-  if (box) {
-
-    if (field.value === "Ja") {
-
-      box.style.display = "block";
-
-      return;
-    }
-
-    box.style.display = "none";
-
-    setTimeout(nextStep,180);
-
-    return;
+  if (field.name === "Vouchernummer") {
+    field.value = field.value.replace(/\D/g, "").slice(0, 6);
   }
-}
-
-  if (field.closest(".priority-step")) {
-    const selected = [...document.querySelectorAll(".priority-step input[type='checkbox']:checked")];
-    if (selected.length > 3) {
-      field.checked = false;
-      showError("Bitte wählen Sie maximal drei Antworten aus.");
-    }
-    return;
-  }
-
- if (
-  field.type === "radio" &&
-  field.name !== "Gibt es Lebensmittel die Sie nicht vertragen" &&
-  field.closest(".step") &&
-  currentStep > 0 &&
-  currentStep < 26
-) {
-  setTimeout(nextStep, 180);
-}
 });
 
-form.addEventListener("submit", async (event) => {
+form.addEventListener("change", event => {
+  const field = event.target;
+  const step = field.closest(".step");
+
+  if (!step) {
+    return;
+  }
+
+  if (handlePrioritySelection(field)) {
+    return;
+  }
+
+  const questionType = step.dataset.questionType;
+
+  if (questionType === "weight" && handleWeightQuestion(field, step)) {
+    return;
+  }
+
+  if (
+    questionType === "intolerance" &&
+    handleIntoleranceQuestion(field, step)
+  ) {
+    return;
+  }
+
+  if (
+    field.type === "radio" &&
+    step.dataset.autoAdvance === "true"
+  ) {
+    scheduleNextStep();
+  }
+});
+
+form.addEventListener("submit", async event => {
   event.preventDefault();
   clearError();
 
-  if (!validateCurrentStep()) return;
+  if (!validateCurrentStep()) {
+    return;
+  }
 
   if (!form.checkValidity()) {
     showError("Bitte prüfen Sie Ihre Angaben.");
@@ -295,38 +555,51 @@ form.addEventListener("submit", async (event) => {
 
   try {
     const data = new FormData(form);
+
     const response = await fetch(form.action, {
       method: "POST",
       body: data,
-      headers: { Accept: "application/json" }
+      headers: {
+        Accept: "application/json"
+      }
     });
 
     const result = await response.json();
 
-    if (response.ok && result.success) {
-      form.hidden = true;
-      successMessage.hidden = false;
-      successMessage.focus();
-      window.scrollTo({ top: successMessage.offsetTop - 40, behavior: "smooth" });
-    } else {
-      throw new Error(result.message || "Fehler");
+    if (!response.ok || !result.success) {
+      throw new Error(result.message || "Fehler bei der Übermittlung");
     }
+
+    form.hidden = true;
+    successMessage.hidden = false;
+    successMessage.focus();
+
+    window.scrollTo({
+      top: successMessage.offsetTop - 40,
+      behavior: "smooth"
+    });
   } catch (error) {
-    showError("Die Übermittlung ist fehlgeschlagen. Bitte versuchen Sie es erneut.");
+    console.error(error);
+
+    showError(
+      "Die Übermittlung ist fehlgeschlagen. Bitte versuchen Sie es erneut."
+    );
+
     submitBtn.disabled = false;
     submitBtn.textContent = "Fitness-Check absenden";
   }
 });
 
 startButton.addEventListener("click", () => {
-  setTimeout(() => updateWizard(), 250);
+  window.setTimeout(updateWizard, 250);
 });
 
-updateWizard();
 window.history.scrollRestoration = "manual";
 
 document.addEventListener("DOMContentLoaded", () => {
-  setTimeout(() => {
+  updateWizard();
+
+  window.setTimeout(() => {
     window.scrollTo({
       top: 0,
       left: 0,
